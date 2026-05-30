@@ -3,102 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating Forms</title>
+    <title>Login Form</title>
     <link rel="stylesheet" href="formsPractice.css">
 </head>
 <body>
-     <div class="container">
-        <h1>HTML Forms: Capturing User Input</h1>
-        <p>Forms are used to collect data from users. Let's look at common elements.</p>
-        <div id="formFeedback" class="form-feedback hidden" aria-live="polite"></div>
-
-        <form action="#" method="post" novalidate> <!-- Added novalidate to disable HTML5 validation -->
-            <h2>Basic Information</h2>
-
-            <div class="form-group">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" placeholder="John Doe">
-                <span id="fullNameError" class="error-message"></span>
+    <div class="container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Welcome Back</h1>
+                <p>Log in to continue to your account.</p>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" placeholder="john.doe@example.com">
-                <span id="emailError" class="error-message"></span>
-            </div>
+            <div id="formFeedback" class="form-feedback hidden" aria-live="polite"></div>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <div class="password-wrapper">
-                    <input type="password" id="password" name="password" minlength="8">
-                    <button type="button" id="togglePassword" class="toggle-password">Show</button>
+            <form id="loginForm" action="#" method="post" novalidate>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                    <span id="emailError" class="error-message"></span>
                 </div>
-                <small>Minimum 8 characters</small>
-                <span id="passwordError" class="error-message"></span>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+                        <button type="button" id="togglePassword" class="toggle-password">Show</button>
+                    </div>
+                    <span id="passwordError" class="error-message"></span>
+                </div>
+
+                <div class="form-group remember-group">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Sign In</button>
+                    <button type="reset" class="secondary">Reset</button>
+                </div>
+            </form>
+
+            <div class="login-footer">
+                <a href="#">Forgot password?</a>
+                <p>Don't have an account? <a href="#">Create one</a></p>
             </div>
-
-            <div class="form-group">
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" min="18" max="99" value="25">
-                <span id="ageError" class="error-message"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
-                <span id="messageError" class="error-message"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="country">Country:</label>
-                <select id="country" name="country">
-                    <option value="">-- Please choose an option --</option>
-                    <option value="usa">United States</option>
-                    <option value="canada">Canada</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="australia">Australia</option>
-                </select>
-                <span id="countryError" class="error-message"></span>
-            </div>
-
-            <h2>Preferences</h2>
-
-            <div class="form-group radio-group">
-                <label>Gender:</label>
-                <input type="radio" id="male" name="gender" value="male" checked>
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label>
-                <input type="radio" id="other" name="gender" value="other">
-                <label for="other">Other</label>
-                <span id="genderError" class="error-message"></span>
-            </div>
-
-            <div class="form-group checkbox-group">
-                <label>Interests:</label><br>
-                <input type="checkbox" id="coding" name="interests" value="coding">
-                <label for="coding">Coding</label>
-                <input type="checkbox" id="reading" name="interests" value="reading">
-                <label for="reading">Reading</label>
-                <input type="checkbox" id="sports" name="interests" value="sports" checked>
-                <label for="sports">Sports</label>
-                <span id="interestsError" class="error-message"></span>
-            </div>
-
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="terms" name="terms">
-                <label for="terms">I agree to the terms and conditions</label>
-                <span id="termsError" class="error-message"></span>
-            </div>
-
-            <div class="form-group">
-                <button type="submit">Submit Application</button>
-                <button type="reset">Reset Form</button>
-            </div>
-        </form>
-
-        <div id="submissionResult" class="result-card hidden" aria-live="polite"></div>
+        </div>
     </div>
+
     <script src="formspractice.js"></script>
 </body>
 </html>
