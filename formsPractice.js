@@ -87,6 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.reset();
     });
 
+    emailInput.addEventListener('input', () => {
+        clearError(emailError);
+        clearFeedback();
+    });
+
+    passwordInput.addEventListener('input', () => {
+        clearError(passwordError);
+        clearFeedback();
+    });
+
     togglePasswordButton.addEventListener('click', () => {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
