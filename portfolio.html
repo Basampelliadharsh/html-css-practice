@@ -45,6 +45,8 @@
         grid-template-columns: 1fr 2fr 1fr;
         gap: 20px;
         padding: 30px;
+        max-width: 1200px;
+        margin: 30px auto;
       }
 
       /* COMMON BOX STYLE */
@@ -193,6 +195,102 @@
           font-size: 24px;
         }
       }
+
+      /* Larger screens - spread content more comfortably */
+      @media (min-width: 1200px) {
+        .container {
+          grid-template-columns: 1fr 2fr 1fr;
+          padding: 40px;
+        }
+
+        .navbar h1 {
+          font-size: 48px;
+        }
+      }
+
+      /* Medium screens - collapse to two columns where appropriate */
+      @media (max-width: 1024px) and (min-width: 769px) {
+        .container {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .about {
+          grid-column: 1 / -1;
+        }
+
+        .projects {
+          grid-column: 1 / -1;
+        }
+      }
+
+      /* Education, Certifications, Services and Achievements styles */
+      .education, .certifications, .achievements, .services {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      .education h2, .certifications h2, .achievements h2, .services h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      .education-grid, .cert-grid, .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .edu-card, .cert-card, .service-card {
+        background: white;
+        padding: 18px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      }
+
+      .cert-card {
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .achievement-box ul {
+        list-style: disc;
+        padding-left: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        background: #111;
+        color: #eee;
+        text-align: center;
+        padding: 20px 10px;
+        margin-top: 30px;
+      }
+
+      /* Small device tweaks */
+      @media (max-width: 420px) {
+        .navbar h1 {
+          font-size: 22px;
+        }
+
+        .navbar p {
+          font-size: 14px;
+        }
+
+        .container {
+          padding: 12px;
+          gap: 12px;
+        }
+
+        .box {
+          padding: 18px;
+        }
+      }
     </style>
   </head>
 
@@ -271,6 +369,7 @@
 
         <div class="about-details">
           <div class="detail-box">
+            <h1>GURU</h1>
             <h3>Education</h3>
             <p>Engineering Student</p>
           </div>
