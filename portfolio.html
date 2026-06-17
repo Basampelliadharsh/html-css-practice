@@ -11,8 +11,15 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
-        <h1>Adharsh</h1>
-        <p>Electronics & Communication Engineering Student</p>
+        <div class="brand">
+            <h1>Adharsh</h1>
+            <p>Electronics & Communication Engineering Student</p>
+        </div>
+        <div class="social">
+            <a href="https://github.com/your-username" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/your-username" target="_blank">LinkedIn</a>
+            <a href="mailto:adharsh@example.com">Email</a>
+        </div>
     </header>
     <!-- HERO SECTION -->
 <section class="hero">
@@ -28,8 +35,8 @@
             Embedded Systems and Software Development.
         </p>
 
-        <button>Download Resume</button>
-        <button>Contact Me</button>
+        <a href="resume.pdf" download class="btn">Download Resume</a>
+        <a href="#contact" class="btn">Contact Me</a>
 
     </div>
 
@@ -92,10 +99,17 @@
         </section>
 
         <!-- CONTACT -->
-        <section class="box contact">
+        <section class="box contact" id="contact">
             <h2>Contact</h2>
-            <p>Email: adharsh@example.com</p>
+            <p>Email: <a href="mailto:adharsh@example.com">adharsh@example.com</a></p>
             <p>Phone: +91 XXXXX XXXXX</p>
+
+            <form class="contact-form" action="mailto:adharsh@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
         </section>
 
     </div>
